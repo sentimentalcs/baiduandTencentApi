@@ -20,12 +20,15 @@ define('__BOS_CLIENT_ROOT', dirname(__DIR__));
 $BOS_TEST_CONFIG =
     array(
         'credentials' => array(
-            'accessKeyId' => 'your ak',
-            'secretAccessKey' => 'your sk',
-            'sessionToken' => 'your session token'
+//            'accessKeyId' => '485d1f5568754266bd8043617e5ddd70',
+//            'secretAccessKey' => 'cc78cb5aa71a48778f50e70865473207',
+
+            'accessKeyId' => '246391499a5e4e8c9ec91c977f5234b1',
+            'secretAccessKey' => '70819eb3d3e348aaac802224a4d6932c',
+//            'sessionToken' => 'your session token'
         ),
-        'endpoint' => 'host',
-        'stsEndpoint' => 'sts host',
+        'endpoint' => 'http://bj.bcebos.com',
+//        'stsEndpoint' => 'sts host',
     );
 $STDERR = fopen('php://stderr', 'w+');
 $__handler = new \Monolog\Handler\StreamHandler($STDERR, \Monolog\Logger::DEBUG);

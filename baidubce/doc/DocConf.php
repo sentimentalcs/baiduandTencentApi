@@ -17,10 +17,10 @@
 error_reporting(-1);
 
 $my_credentials = array(
-		'ak' => '485d1f5568754266bd8043617e5ddd70',    //修改成自己的BCE AK
-		'sk' => 'cc78cb5aa71a48778f50e70865473207',    //修改成自己的BCE SK
+		'ak' => '246391499a5e4e8c9ec91c977f5234b1',    //修改成自己的BCE AK
+		'sk' => '70819eb3d3e348aaac802224a4d6932c',    //修改成自己的BCE SK
 );
 $g_doc_configs = array(
 		'credentials' => $my_credentials,
-		'endpoint' => 'doc.baidubce.com',
+		'endpoint' => 'doc.bj.baidubce.com',
 );

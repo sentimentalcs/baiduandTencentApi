@@ -34,10 +34,10 @@ $head = array(
   //  "format"=>"pdf",
 //);
 $data = array(
-    "bucket"=>"bktmhfvqugjnnumgfb0h",
-    "object"=>"upload/doc-hfwk8czsrheki6t.doc",
+    "bucket"=>"docupload",
+    "object"=>"upload/aa.docx",
     "title"=>"my_doc",
-    "format"=>"doc",
+    "format"=>"docx",
 );
 $data_string = json_encode($data);
 

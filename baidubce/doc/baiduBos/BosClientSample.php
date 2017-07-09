@@ -29,6 +29,25 @@ use BaiduBce\Auth\SignOptions;
 
 use BaiduBce\Log\LogFactory;
 
+$client = new BosClient($BOS_TEST_CONFIG);
+
+//列表bucket中的所有列表
+$bucket = $client -> listBuckets() ;
+var_dump($bucket);
+//$a = $client->createBucket('test-bucket-operations');
+//var_dump($client->getBucketAcl(''));
+
+//查看bucket的权限
+//$acl = $client->getBucketAcl('testbucket11');
+//echo '<pre>';
+//print_r($acl);
+//echo '</pre>';
+
+//$client->putObjectFromFile('docupload','upload/aa.docx','aa.docx');
+exit;
+//
+
+
 class BosClientTest extends PHPUnit_Framework_TestCase
 {
     private $client;
