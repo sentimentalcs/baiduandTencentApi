@@ -6,29 +6,26 @@
         (1)`xpdfbin-linux-3.04.tar.gz`<br/>
         (2)`xpdfbin-linux-3.04.tar.gz`<br/>
 2.linux上进入 `cd /usr/local` <br/>
-       tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local  //解压到安装目录
+      `tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local`  //解压到安装目录
        
-   　　cd /usr/local/xpdfbin-linux-3.04  //打开解压文件夹
+   　　`cd /usr/local/xpdfbin-linux-3.04`  //打开解压文件夹
    
-   　　cat INSTALL
+   　　`cat INSTALL`
    
-   　　cd bin32/
+   　　`cd bin32/`
    
-   　　cp ./* /usr/local/bin/
+   　　`cp ./* /usr/local/bin/`
    
-   　　cd ../doc/
+   　　`cd ../doc/`
    
-   　　mkdir -p /usr/local/man/man1
+   　　`mkdir -p /usr/local/man/man1`
    
-   　　mkdir -p /usr/local/man/man5
+   　　`mkdir -p /usr/local/man/man5`
    
-   　　cp *.1 /usr/local/man/man1
+   　　`cp *.1 /usr/local/man/man1`
    
-   　　cp *.5 /usr/local/man/man5<br/>
-```diff
-+ 鸟宿池边树，僧敲月下门
-- 鸟宿池边树，僧推月下门
-```
+   　　`cp *.5 /usr/local/man/man5<br/>`
+
      ```Java
      public static void main(String[]args){} //Java
      ```
