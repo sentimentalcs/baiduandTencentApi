@@ -2,7 +2,7 @@
 
 参考链接：http://www.cnblogs.com/yinhutaxue/p/Yihoo.html
 
-1.前往官网(http://www.foolabs.com/xpdf/)下载<br/>
+1.前往官网:http://www.foolabs.com/xpdf<br/>
         (1)`xpdfbin-linux-3.04.tar.gz`<br/>
         (2)`xpdfbin-linux-3.04.tar.gz`<br/>
 2.linux上进入 `cd /usr/local` <br/>
