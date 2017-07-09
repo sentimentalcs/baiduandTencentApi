@@ -1,12 +1,12 @@
-# xpdf安装指南
+# 一.xpdf安装指南
 
 参考链接：http://www.cnblogs.com/yinhutaxue/p/Yihoo.html
 
-### 1.前往官网:http://www.foolabs.com/xpdf<br/>
+### 1.1 前往官网:http://www.foolabs.com/xpdf<br/>
         (1)xpdfbin-linux-3.04.tar.gz
         (2)xpdfbin-linux-3.04.tar.gz
 ***
-### 2.linux操作
+### 1.2 inux操作
       cd /usr/local
       tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local
       cd /usr/local/xpdfbin-linux-3.04  
