@@ -7,9 +7,9 @@
         (2)xpdfbin-linux-3.04.tar.gz
 ***
 ### 2.linux上进入 cd /usr/local
-      `tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local   //解压到安装目录`  
+      `tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local` 
        
-   　　cd /usr/local/xpdfbin-linux-3.04  //打开解压文件夹  
+   　　`cd /usr/local/xpdfbin-linux-3.04`  
    
    　　`cat INSTALL`
    
