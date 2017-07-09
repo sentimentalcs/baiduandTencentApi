@@ -9,16 +9,24 @@
 class ApiOfficeToText
 {
     const NOT_AN_VALID_PATH = '不是有效的文件!';
-    const PDF_TO_TXT = '解析pdf内容失败';
-    const DOC_TO_TXT = '解析doc文档内容失败';
-    const DOCX_TO_TXT = '解析docx文档内容失败';
-    const NO_FOUND_XPDF = '没有在服务器上发现xpdf组件';
+    const PDF_TO_TXT        = '解析pdf内容失败';
+    const DOC_TO_TXT        = '解析doc文档内容失败';
+    const DOCX_TO_TXT       = '解析docx文档内容失败';
+    const NO_FOUND_XPDF     = '没有在服务器上发现xpdf组件';
     const NO_FOUND_ANTIWORD = '没有在服务器上发现antiword组件';
-    const NOT_SUPPORT_FILE = '暂不支持该文件类型';
+    const NOT_SUPPORT_FILE  = '暂不支持该文件类型';
     
     public static $error ;  //存放错误信息的容器
+    public static $allowlist = [
+        'base_bath'         => '',    //默认为空 以ApiOfficeTotext文件所在的为基础目录
+        'ignore_whitespace' => true,  //'是否忽略空格'
+        'filter_pattern'    => '',    //'用于过滤的正则表达式'
+    ];
 
+    public static function config()
+    {
 
+    }
     /**设置文档的错误提示内容
      * [setError description]  
      * @param [type] $erroNum [错误号]
