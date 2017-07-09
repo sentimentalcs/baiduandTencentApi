@@ -24,8 +24,11 @@
    
    　　cp *.1 /usr/local/man/man1
    
-   　　cp *.5 /usr/local/man/man5
-       
+   　　cp *.5 /usr/local/man/man5<br/>
+```diff
++ 鸟宿池边树，僧敲月下门
+- 鸟宿池边树，僧推月下门
+```
      ```Java
      public static void main(String[]args){} //Java
      ```
