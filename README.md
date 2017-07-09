@@ -7,8 +7,8 @@
         (2)xpdfbin-linux-3.04.tar.gz
 ***
 ### 2.linux操作
-      `cd /usr/local`
-      `tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local` 
+      cd /usr/local
+      tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local
        
    　　`cd /usr/local/xpdfbin-linux-3.04`  
    
