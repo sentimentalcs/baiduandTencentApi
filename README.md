@@ -3,8 +3,8 @@
 参考链接：http://www.cnblogs.com/yinhutaxue/p/Yihoo.html
 
 ### 1.前往官网:http://www.foolabs.com/xpdf<br/>
-        (1)`xpdfbin-linux-3.04.tar.gz`<br/>
-        (2)`xpdfbin-linux-3.04.tar.gz`<br/>
+        (1)xpdfbin-linux-3.04.tar.gz
+        (2)xpdfbin-linux-3.04.tar.gz
 ***
 ### 2.linux上进入 `cd /usr/local` <br/>
       `tar zxvf xpdfbin-linux-3.04.tar.gz -C /usr/local`  //解压到安装目录
