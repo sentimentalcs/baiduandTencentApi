@@ -1,3 +1,7 @@
+#前言 
+- [x] xpdf可将pdf内容解析为php可读的文本内容
+- [x] antiword可将doc(注意不是docx)内容解析为php可读的文本内容
+****
 # 一.xpdf安装指南
 
 参考链接：http://www.cnblogs.com/yinhutaxue/p/Yihoo.html
