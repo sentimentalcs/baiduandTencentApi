@@ -17,7 +17,13 @@
       mkdir -p /usr/local/man/man1
       mkdir -p /usr/local/man/man5
       cp *.1 /usr/local/man/man1
-      cp *.5 /usr/local/man/man5<br/>
+      cp *.5 /usr/local/man/man5
+#### 下面是中文语言包支持安装
+      cp sample-xpdfrc /usr/local/etc/xpdfrc
+      tar zxvf xpdf-chinese-simplified.tar.gz -C /usr/local
+      cd /usr/local/xpdf-chinese-simplified
+      mkdir -p /usr/local/share/xpdf/chinese-simplified
+      cp -r Adobe-GB1.cidToUnicode ISO-2022-CN.unicodeMap EUC-CN.unicodeMap GBK.unicodeMap CMap /usr/local/share/xpdf/chinese-simplified/
      
 
 
