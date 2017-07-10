@@ -38,6 +38,10 @@
 - [x] php调用示例 `shell_exec('/usr/local/bin/pdftotext filename')`
 - [x] 调用该命令行之后会自动生成同名的以txt为后缀的文件
 - [x] `pdftotext -layout -enc GBK W020151204630497494614.pdf` //如果上例无法调用 则可以考虑使用此行代码
+#### php调用示例：
+```PHP
+   shell_exec('/usr/local/bin/pdftotext filename')    
+```
 ****
 # 二 antiword安装
 ### 2.1 前往官网:http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz
