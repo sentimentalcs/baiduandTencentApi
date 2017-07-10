@@ -18,7 +18,8 @@ $Authorization = getSigner($host,$method,$path, $parms, $timestamp);
 $httputil = new HttpUtil();
 $parms = $httputil->getCanonicalQueryString($parms);
 $url = "http://".$host.$path."?".$parms;
-
+var_dump($url);
+// exit;
 $head = array(
     "Content-Type:application/json",
     //"Content-Length:{$filesize}",

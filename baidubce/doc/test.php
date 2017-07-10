@@ -528,19 +528,20 @@ class Docx2Text
 }
 
 //实例化
-//$text = new Docx2Text();
-//
-//// 加载docx文件
-//$text->setDocx('./test.doc');
-//
-//// 将内容存入$docx变量中
-//$docx = $text->extract();
+$text = new Docx2Text();
+
+// 加载docx文件
+$text->setDocx('./test2.docx');
+
+// 将内容存入$docx变量中
+$docx = $text->extract();
 
 // 调试输出
-//echo '<pre>';
-//print_r($docx);
-//echo '</pre>';
-//$text = $docx;
+echo '<pre>';
+$docx = mb_substr(preg_replace('/\s+/','',$docx),0,10000,'utf-8');
+print_r($docx);
+echo '</pre>';
+$text = $docx;
 //$text = preg_replace('/\s+/i','',mb_substr($text,0,30000,'utf-8'));
 //print_r($text);
 //exit;
@@ -555,8 +556,8 @@ require_once './qcloudapi-sdk-php-master/src/QcloudApi/QcloudApi.php';
 //$text   = $pdf->getText();
 
 
-$text = file_get_contents('./test.txt');
-var_dump(mb_strlen($text,'utf-8'));
+// $text = file_get_contents('./test.txt');
+// var_dump(mb_strlen($text,'utf-8'));
 $config = array(
                 'SecretId'       => 'AKIDgRG711bKvbSeqzeD10yqrw4GYqrsJAa5',
                 'SecretKey'      => 'nmNrFcxkZvK0OnEXrHdyFaqyy44yRp9c',
