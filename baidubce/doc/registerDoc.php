@@ -6,7 +6,6 @@ global $g_doc_configs;
 global $my_credentials;
 
 //注册文档
-
 $host= $g_doc_configs['endpoint'];
 $path = "/v2/document";
 $method = "POST";

@@ -22,5 +22,5 @@ $my_credentials = array(
 );
 $g_doc_configs = array(
 		'credentials' => $my_credentials,
-		'endpoint' => 'doc.baidubce.com',
+		'endpoint' => 'doc.bj.baidubce.com',
 );

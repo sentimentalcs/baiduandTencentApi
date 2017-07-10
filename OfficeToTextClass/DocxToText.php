@@ -1,11 +1,19 @@
 <?php
-
 /**
- * Class Docx2Text
- *
- * Docx => String
+ * Created by PhpStorm.
+ * User: chindor
+ * Date: 2017/6/24
+ * Time: 17:47
  */
-class Docx2Text
+
+/***
+调用示例
+$doc = new Docx2Text();
+$doc -> setDocx('./Error.docx');
+$text = $doc->extract();
+$text = mb_substr(preg_replace('/\s+|[a-zA-Z\/\*\=\r\n]||/','',$text),0,20000,'utf-8');
+**/
+class DocxToText
 {
     const SEPARATOR_TAB = "\t";
 
@@ -219,7 +227,7 @@ class Docx2Text
             exit('There is no content');
         }
 
-        $this->domDocument = new DomDocument();
+        $this->domDocument = new \DomDocument();
         $this->domDocument->loadXML($this->_document);
         //get the body node to check the content from all his children
         $bodyNode = $this->domDocument->getElementsByTagNameNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'body');
@@ -250,12 +258,13 @@ class Docx2Text
      */
     public function setDocx($filename)
     {
-        $this->docx = new ZipArchive();
+        $this->docx = new \ZipArchive();
         $ret = $this->docx->open($filename);
         if ($ret === true) {
             $this->_document = $this->docx->getFromName('word/document.xml');
+            return true;
         } else {
-            exit('failed');
+            return false;
         }
     }
 
@@ -271,7 +280,7 @@ class Docx2Text
                 $this->_endnote = $this->docx->getFromName('word/endnotes.xml');
             }
             if (!empty($this->_endnote)) {
-                $domDocument = new DomDocument();
+                $domDocument = new \DomDocument();
                 $domDocument->loadXML($this->_endnote);
                 $endnotes = $domDocument->getElementsByTagNameNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'endnote');
                 foreach ($endnotes as $endnote) {
@@ -294,7 +303,7 @@ class Docx2Text
                 $this->_footnote = $this->docx->getFromName('word/footnotes.xml');
             }
             if (!empty($this->_footnote)) {
-                $domDocument = new DomDocument();
+                $domDocument = new \DomDocument();
                 $domDocument->loadXML($this->_footnote);
                 $footnotes = $domDocument->getElementsByTagNameNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'footnote');
                 foreach ($footnotes as $footnote) {
@@ -318,7 +327,7 @@ class Docx2Text
         $this->_numbering = $this->docx->getFromName('word/numbering.xml');
         if (!empty($this->_numbering)) {
             //we use the domdocument to iterate the children of the numbering tag
-            $domDocument = new DomDocument();
+            $domDocument = new \DomDocument();
             $domDocument->loadXML($this->_numbering);
             $numberings = $domDocument->getElementsByTagNameNS('http://schemas.openxmlformats.org/wordprocessingml/2006/main', 'numbering');
             //there is only one numbering tag in the numbering.xml
@@ -372,7 +381,7 @@ class Docx2Text
                 $this->listNumbering();
             }
             //use the xpath to get expecific children from a node
-            $xpath = new DOMXPath($this->domDocument);
+            $xpath = new \DOMXPath($this->domDocument);
             $query = 'w:pPr/w:numPr';
             $xmlLists = $xpath->query($query, $node);
             $xmlLists = $xmlLists->item(0);
@@ -526,72 +535,3 @@ class Docx2Text
         return trim(strip_tags($xml));
     }
 }
-
-//实例化
-$text = new Docx2Text();
-//
-//// 加载docx文件
-$text->setDocx('./Error.docx');
-//
-//// 将内容存入$docx变量中
-$docx = $text->extract();
-$docx = mb_substr(preg_replace('/\s+|[a-zA-Z\/\*\=\r\n]||/','',$docx),0,20000,'utf-8');
-// 调试输出
-echo '<pre>';
-print_r($docx);
-echo '</pre>';
-$text = $docx;
-//$text = preg_replace('/\s+/i','',mb_substr($text,0,30000,'utf-8'));
-//print_r($text);
-//exit;
-//var_dump(mb_strlen($text,'utf-8'));
-
-//exit;
-include './vendor/autoload.php';
-$time = time();
-require_once './qcloudapi-sdk-php-master/src/QcloudApi/QcloudApi.php';
-//$parser = new \Smalot\PdfParser\Parser();
-//$pdf    = $parser->parseFile('test3.pdf');
-//$text   = $pdf->getText();
-
-
-//$text = file_get_contents('./test.txt');
-var_dump(mb_strlen($text,'utf-8'));
-$config = array(
-                'SecretId'       => 'AKIDgRG711bKvbSeqzeD10yqrw4GYqrsJAa5',
-                'SecretKey'      => 'nmNrFcxkZvK0OnEXrHdyFaqyy44yRp9c',
-                'RequestMethod'  => 'POST',
-                'DefaultRegion'  => 'gz'
-                );
-
-$cvm = QcloudApi::load(QcloudApi::MODULE_WENZHI, $config);
-
-
-//文本分类 超过1600就报鉴权错误的信息
-//$package = array("content"=>mb_substr($text,0,1600,'utf-8'));
-//$a = $cvm->TextClassify($package);
-
-//echo mb_strlen($text,'utf-8');
-//echo mb_strlen(mb_substr($text,0,1600,'utf-8'),'utf-8');
-
-$package = array("content"=>$text);
-
-//大概需支持21000字左右
-$a = $cvm->TextClassify($package);
-
-
-if ($a === false) {
-    $error = $cvm->getError();
-    echo "Error code:" . $error->getCode() . ".\n";
-    echo "message:" . $error->getMessage() . ".\n";
-    echo "ext:" . var_export($error->getExt(), true) . ".\n";
-} else {
-    var_dump($a);
-    var_dump(time()-$time);
-}
-
-echo "\nRequest :" . $cvm->getLastRequest();
-echo "\nResponse :" . $cvm->getLastResponse();
-echo "\n";
-
-exit;
