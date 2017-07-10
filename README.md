@@ -32,6 +32,7 @@
       pdftotext W020151204630497494614.pdf     //没有采用字体库，存在乱码
       pdftotext -layout -enc GBK W020151204630497494614.pdf    //无乱码
 #### pdftotext注意事项
+- [x] xpdf的配置文件如果出现乱码的现象必须要去掉`textEncoding=utf-8`的选项
 - [x] php.ini中的disable_function 中剔除shell_exec
 - [x] 注意pdftotext的执行权限 确保对apache或者nginx有执行权限和写权限
 - [x] php调用示例 `shell_exec('/usr/local/bin/pdftotext filename')`
