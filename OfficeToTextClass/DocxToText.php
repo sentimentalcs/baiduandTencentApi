@@ -223,8 +223,7 @@ class DocxToText
     public function extract($filename = '')
     {
         if (empty($this->_document)) {
-            //xml content from document.xml is not got
-            exit('There is no content');
+            return false;
         }
 
         $this->domDocument = new \DomDocument();

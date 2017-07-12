@@ -1,0 +1,2 @@
+{"documentId":"doc-hfwk8czsrheki6t","bucket":"bktmhfvqugjnnumgfb0h","object":"upload/doc-hfwk8czsrheki6t.doc","bosEndpoint":"http://bj.bcebos.com"}
+   'documentId' => string 'doc-hf2ke38vphnj1nu','bucket' => string 'bktmhfvqugjnnumgfb0h' 'object' => string 'upload/doc-hf2ke38vphnj1nu.doc' (l

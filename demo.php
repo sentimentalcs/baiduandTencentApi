@@ -1,8 +1,12 @@
 <?php 
 	include './OfficeToTextClass/DocxToText.php';
+	include './OfficeToTextClass/OfficeToText.php';
 
+	 OfficeToText::config(['base_bath'=>__DIR__,'filter_pattern'=>'/\w+|[\\/{}\-\^\$\|=*#@~&:]/']);
 
-	// 解析docx文件中的内容
-	$doc = new DocxToText();
-	$doc -> setDocx('./docDocxPdf/Error.docx');
-	$text = preg_replace('/\s+/','',$doc->extract());
+	 // 解析docx文件中的内容
+	 if(!$txt = OfficeToText::text('/docDocxPdf/test.docx')){
+	 	echo OfficeToText::$error;
+	 }
+
+	 print_r($txt);
