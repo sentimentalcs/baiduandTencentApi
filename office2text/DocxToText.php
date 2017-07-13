@@ -13,6 +13,8 @@ $doc -> setDocx('./Error.docx');
 $text = $doc->extract();
 $text = mb_substr(preg_replace('/\s+|[a-zA-Z\/\*\=\r\n]||/','',$text),0,20000,'utf-8');
 **/
+
+namespace office2text;
 class DocxToText
 {
     const SEPARATOR_TAB = "\t";

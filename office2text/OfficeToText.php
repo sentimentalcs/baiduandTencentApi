@@ -5,6 +5,7 @@
  * Date: 2017/6/24
  * Time: 17:33
  */
+namespace office2text;
 
 class OfficeToText
 {
