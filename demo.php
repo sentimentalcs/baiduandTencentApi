@@ -4,12 +4,10 @@
 	include './office2text/doc2textAutoloader.php';
 	use office2text\OfficeToText;
 	OfficeToText::config(['base_bath'=>__DIR__,'filter_pattern'=>'/\w+|[\\/{}\-\^\$\|=*#@~&:]/']);
-	if(!$txt = OfficeToText::text('/docDocxPdf/test.docx')){
+	if(!$txt = OfficeToText::text('/docDocxPdf/test.pdf')){
 		 echo OfficeToText::$error;
 	}
-
 	print_r($txt);
 /*************************************************************************************************************/
-	
-	//调用文智api的示例
+//调用文智api的示例
 	

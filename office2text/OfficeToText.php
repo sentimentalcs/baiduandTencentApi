@@ -193,10 +193,9 @@ class OfficeToText
     {
 
         shell_exec(self::get_plugin('xpdf').' '.self::filter_ilegal_charater(self::$file_path));
-        var_dump(self::get_plugin('xpdf').' '.self::filter_ilegal_charater(self::$file_path));
-        exit;
+
         $txt_path = self::changeExtension(self::$file_path,'txt');
-            
+        
         if(file_exists($txt_path) && is_file($txt_path)){
             return file_get_contents($txt_path);
         }
@@ -212,6 +211,11 @@ class OfficeToText
     public static function check_path($file_path)
     {
         $file_path = rtrim(self::get_base_path(),'\\,/').DIRECTORY_SEPARATOR.ltrim($file_path,'/,\\');
+        if(self::$environment == 'windows'){
+            $file_path = mb_convert_encoding($file_path,'GBK',mb_detect_encoding($file_path));
+        }else if(self::$environment == 'windows'){
+            $file_path = mb_convert_encoding($file_path,'utf-8',mb_detect_encoding($file_path));
+        }
         if(file_exists($file_path) && is_file($file_path)){
             self::$file_path = $file_path;
             return true;

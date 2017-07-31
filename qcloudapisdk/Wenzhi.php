@@ -25,7 +25,7 @@ class Wenzhi
    private $wenzhi;
 
 
-   public 
+   public text 
 
     /**根据文本内容调用文智sdk返回 标签列表
      * @param $text            文本内容
